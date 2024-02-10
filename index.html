@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Cost Calculator</title>
+    <style>
+        /* Add your CSS styling here */
+        /* For example, style the form, buttons, and result display */
+    </style>
+</head>
+<body>
+    <h1>Solar Cost Calculator</h1>
+    <form id="solarForm">
+        <label for="energyUsage">Monthly Energy Usage (kWh):</label>
+        <input type="number" id="energyUsage" required>
+        <button type="button" onclick="calculateCost()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateCost() {
+            const energyUsage = parseFloat(document.getElementById('energyUsage').value);
+            // You can add your own logic here to calculate the solar cost
+            // For example, consider installation costs, panel efficiency, etc.
+            // Let's assume a simple calculation for demonstration purposes:
+            const costPerKWh = 0.12; // Cost per kilowatt-hour
+            const totalCost = energyUsage * costPerKWh;
+
+            document.getElementById('result').innerHTML = `Estimated monthly cost: $${totalCost.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
